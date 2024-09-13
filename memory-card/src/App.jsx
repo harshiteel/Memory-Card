@@ -23,19 +23,17 @@ function App() {
         "https://api.unsplash.com/photos/random?count=10&client_id=g712L41odhU0nTg4oN1D6en1kH1-XSFPit2PdPPYLSk"
       );
 
-      // Check if the response is okay
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
 
       const data = await response.json();
-      console.log("Raw API response: ", data); // Log the raw response to see what’s coming in
+      console.log("Raw API response: ", data); 
 
-      // Ensure that data is an array and contains the expected objects
       if (Array.isArray(data) && data.length > 0) {
         const imageUrls = data.map((img) => img.urls.small);
-        console.log("Fetched image URLs: ", imageUrls); // Debugging
-        setImages(imageUrls); // Set state with the image URLs
+        console.log("Fetched image URLs: ", imageUrls); 
+        setImages(imageUrls); 
       } else {
         console.error("Unexpected API response format", data);
       }
