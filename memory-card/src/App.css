@@ -52,7 +52,15 @@ body {
 .score {
   margin-bottom: 20px;
   text-align: center;
+  color: black;
 }
+
+.high-score {
+  margin-bottom: 20px;
+  text-align: center;
+  color: black;
+}
+
 
 .reset-button {
   background-color: #007bff;

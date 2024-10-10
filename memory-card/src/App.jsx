@@ -5,12 +5,14 @@ import "./App.css";
 import Card from "./components/Card.jsx";
 import Message from "./components/Message.jsx";
 import Score from "./components/Score.jsx";
+import HIghScore from "./components/HIghScore.jsx";
 
 function App() {
   const [images, setImages] = useState([]);
   const [score, setScore] = useState(0);
   const [clickedCards, setClickedCards] = useState([]);
   const [message, setMessage] = useState("");
+  const [highScore, setHighScore] = useState(0);
 
   useEffect(() => {
     fetchImages();
@@ -44,6 +46,9 @@ function App() {
 
   const handleCardClick = (clickedImage) => {
     if (clickedCards.includes(clickedImage)) {
+      if(score > highScore) {
+        setHighScore(score);
+      }
       setScore(0);
       setClickedCards([]);
       setMessage("You clicked this already! Start again...");
@@ -58,6 +63,7 @@ function App() {
     setImages(images.sort(() => Math.random() - 0.5));
   };
   const resetGame = () => {
+    setHighScore(score);
     setScore(0);
     setClickedCards([]);
     setMessage("Game reset! Click a card to start.");
@@ -68,6 +74,7 @@ function App() {
     <>
       <Message message={message} />
       <Score score={score} />
+      <HIghScore highScore={highScore} />
       <button className="reset-button" onClick={resetGame}>
         Reset Game
       </button>
