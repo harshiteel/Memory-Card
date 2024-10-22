@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-function HighScore({highScore}) {
+function HIghScore({highScore}) {
   return (
     <>
       <div className="high-score">

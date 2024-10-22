@@ -5,7 +5,7 @@ import "./App.css";
 import Card from "./components/Card.jsx";
 import Message from "./components/Message.jsx";
 import Score from "./components/Score.jsx";
-import HighScore from "./components/HighScore.jsx";
+import HIghScore from "./components/HIghScore.jsx";
 
 function App() {
   const [images, setImages] = useState([]);
@@ -74,7 +74,7 @@ function App() {
     <>
       <Message message={message} />
       <Score score={score} />
-      <HighScore highScore={highScore} />
+      <HIghScore highScore={highScore} />
       <button className="reset-button" onClick={resetGame}>
         Reset Game
       </button>
