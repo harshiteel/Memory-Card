@@ -4,7 +4,7 @@ function Score({ score }, {highScore}) {
   return (
     <>
       <div className="score">
-        <h3>Score: {score}</h3>
+        <h3>Score is: {score}</h3>
       </div>
     </>
   );
